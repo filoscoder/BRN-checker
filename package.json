@@ -1,0 +1,24 @@
+{
+  "name": "rn-crn-checker",
+  "version": "1.0.0",
+  "description": "This is an open API available in South Korea, is checks a company closure status via xml request.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filoscoder/rn-crn-checker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filoscoder/rn-crn-checker/issues"
+  },
+  "homepage": "https://github.com/filoscoder/rn-crn-checker#readme",
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "xml2js": "^0.4.23"
+  }
+}
