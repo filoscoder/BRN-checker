@@ -1,6 +1,8 @@
 # BRN-status-checker
 This is an open API source available **ONLY** in `South Korea`, it checks a company `current closure status` & provide `detailed information` if it is a Telecommunication seller company (**E-commerce**).
 
+* All the request are made using [`axios`](https://www.npmjs.com/package/axios)
+
 ## Features:
 * Request business current closure status on [Hometax](https://teht.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/ab/a/a/UTEABAAA13.xml)
 ```javascript
