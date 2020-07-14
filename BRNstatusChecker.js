@@ -1,4 +1,3 @@
-const XML2js= require("xml2js");
 const axios = require("axios");
 const FTCconst = require("./FTCkeys")
 
@@ -23,10 +22,8 @@ const requestBody =
 
 function xmlBRNparser (responseData) {
     return new Promise((resolve, reject) => {
-      XML2js.parseString(responseData, (err, res) => {
-        if (err) reject(err);
-        resolve(res.map.trtCntn[0]); // Company status msh => RESPONSE > 'map' > 'trtCntn' >
-      });
+      const matchRegExp = /<trtCntn[^>]*>([^<]+)<\/trtCntn>/gi;
+      resolve(matchRegExp.exec(responseData)[1])
     });
   }
 
@@ -34,7 +31,7 @@ function htmlFTCParser (htmlResponse, xmlResponse) {
   return new Promise ((resolve, reject)=> {
   if (!htmlResponse) reject(console.error("There's no data to parse"));
    const thMatchRegExp = /<th[^>]*>([^<]+)<\/th>/gi;
-   const tdMatchRegExp = /<td[^>]*>([^<]+)<\/td>/gi;
+   const tdMatchRegExp = /<td[^>]*>([^<]+)<\/td>/gi;''
    let thMatch = thMatchRegExp.exec(htmlResponse);
    let tdMatch = tdMatchRegExp.exec(htmlResponse);
    let obj = {};
