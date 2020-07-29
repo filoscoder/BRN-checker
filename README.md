@@ -1,8 +1,8 @@
-# BRN-status-checker
-This is an open API source available **ONLY** in `South Korea`, it checks a company `current closure status` & provide `detailed information` if it is a Telecommunication seller company (**E-commerce**).
+# BRN-checker
+This is an open API `source` available **ONLY** in `South Korea`, it checks a company `current closure status` & provide `detailed information` if it is a Telecommunication seller company (**E-commerce**).
 
 * All the request are made using [`axios`](https://www.npmjs.com/package/axios)
-* Type-checking & null-proof with Typescript
+* Type-checking & null-proof with [`Typescript`](https://www.typescriptlang.org/index.html)
 
 ## Features:
 * Request business current closure status at [Hometax](https://teht.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/ab/a/a/UTEABAAA13.xml)'s API
@@ -19,28 +19,50 @@ There are 3 possible outputs under the key name `businessStatus`:
 
 
 ## Usage
-### ***The API server is not hosted yet.***
+### ***The API server is not hosted. This is only the Source***
+
 - Install ts-node & typescript: `npm install -g ts-node typescript`
 - git clone this repo
 - Install dependencies: `yarn` or `npm i`
 - execute with node + BRN (Business Registration Number - 사업자등록번호)
+
 ```bash
-    node index.js ${BRN}
+    ts-node index.ts ${BRN}
 ```
+
+## Import
+`BRN-checker` can be imported where ever you need. Just has to be called with a parameter, the BRN.
+
+|  |  |
+|--|--|
+|Parameter| `string` |
+|Return| `string` or `Object` |
+
+#### Example
+```javascript
+  import brnChecker from './brnChecker';
+
+  brnChecker(1234567890);
+
+  // Output>
+  // See `Output` below
+
+```
+
 
 ## Output
 The examples below are filled with `dummy data`
 
 - If the consulted ${`BRN`} status belongs to a currently `closed company`:
 ```javascript
-| MyTerminal > node index.js 1234567890
+| MyTerminal > ts-node index.ts 1234567890
 
 { businessStatus: '사업을 하지 않고 있습니다.' }
 ```
 
 - If the consulted ${`BRN`} status belongs to a currently `available company`:
 ```javascript
-| MyTerminal > node index.js 1234567890
+| MyTerminal > ts-node index.ts 1234567890
 
 {
   tcsNo: '2020-가나다라-01234',
