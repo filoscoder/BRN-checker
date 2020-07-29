@@ -2,9 +2,10 @@
 This is an open API source available **ONLY** in `South Korea`, it checks a company `current closure status` & provide `detailed information` if it is a Telecommunication seller company (**E-commerce**).
 
 * All the request are made using [`axios`](https://www.npmjs.com/package/axios)
+* Type-checking & null-proof with Typescript
 
 ## Features:
-* Request business current closure status on [Hometax](https://teht.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/ab/a/a/UTEABAAA13.xml)
+* Request business current closure status at [Hometax](https://teht.hometax.go.kr/websquare/websquare.html?w2xPath=/ui/ab/a/a/UTEABAAA13.xml)'s API
 ```javascript
 There are 3 possible outputs under the key name `businessStatus`:
 
@@ -14,12 +15,14 @@ There are 3 possible outputs under the key name `businessStatus`:
 
     3. '부가가치세 일반과세자 입니다.'
 ```
-* If the companyn an E-commerce (['통신판매업자'](http://www.ftc.go.kr/www/bizCommList.do?key=232)) the API provides a detailed data.
+* If the company is an E-commerce (['통신판매업자'](http://www.ftc.go.kr/www/bizCommList.do?key=232)) the API returns detailed data.
 
 
 ## Usage
 ### ***The API server is not hosted yet.***
+- Install ts-node & typescript: `npm install -g ts-node typescript`
 - git clone this repo
+- Install dependencies: `yarn` or `npm i`
 - execute with node + BRN (Business Registration Number - 사업자등록번호)
 ```bash
     node index.js ${BRN}
