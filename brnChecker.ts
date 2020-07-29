@@ -66,7 +66,7 @@ function htmlFTCParser(
   });
 }
 
-const BRNstatusChecker = (BRN: string): Promise<string | Record<string, string>> => {
+const brnChecker = (BRN: string): Promise<string | Record<string, string>> => {
   return new Promise<Record<string, string>>((resolve, reject): void => {
     axios
       .post(
@@ -133,4 +133,4 @@ const BRNstatusChecker = (BRN: string): Promise<string | Record<string, string>>
   });
 };
 
-export default BRNstatusChecker;
+export default brnChecker;
