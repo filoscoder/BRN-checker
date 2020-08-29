@@ -1,5 +1,5 @@
 # BRN-checker
-This is an open API `source` available **ONLY** in `South Korea`, it checks a company `current closure status` & provide `detailed information` if it is a Telecommunication seller company (**E-commerce**).
+This is an open API `source` relevant **ONLY** in `South Korea`, since it checks Korean company `current closure status` & provide `detailed information` if it is a Telecommunication seller company (**E-commerce**).
 
 * All the request are made using [`axios`](https://www.npmjs.com/package/axios)
 * Type-checking & null-proof with [`Typescript`](https://www.typescriptlang.org/index.html)
@@ -9,11 +9,11 @@ This is an open API `source` available **ONLY** in `South Korea`, it checks a co
 ```javascript
 There are 3 possible outputs under the key name `businessStatus`:
 
-    1. '사업을 하지 않고 있습니다.'
+    1. '사업을 하지 않고 있습니다.' ('Not doing business.')
 
-    2. '부가가치세 간이과세자 입니다.'
+    2. '부가가치세 간이과세자 입니다.' ('Simplified VAT tax payer.')
 
-    3. '부가가치세 일반과세자 입니다.'
+    3. '부가가치세 일반과세자 입니다.' ('General taxpayer of VAT.')
 ```
 * If the company is an E-commerce (['통신판매업자'](http://www.ftc.go.kr/www/bizCommList.do?key=232)) the API returns detailed data.
 
