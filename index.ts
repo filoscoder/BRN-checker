@@ -1,4 +1,4 @@
-import brnChecker from "./brnChecker";
+import brnChecker from "./src/brnChecker";
 
 const BRN= process.argv[2]; // node index.js ${BRN}
 if (!BRN) {
