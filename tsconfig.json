@@ -11,7 +11,7 @@
     "experimentalDecorators": true,
     "sourceMap": true
   },
-  "include": ["*"],
+  "include": ["*", "src/brnChecker.ts"],
   "exclude": [
     "node_modules",
   ]
